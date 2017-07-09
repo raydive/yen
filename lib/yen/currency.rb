@@ -46,7 +46,8 @@ module Yen
 
     private
     def valid?(value)
-      value.class.superclass == Numeric || value.class == String
+      # Ruby 2.3以前ではクラス階層が Fixnum or Bignum => Integer => Numericになるため
+      value.class.superclass.superclass == Numeric || value.class.superclass == Numeric || value.class == String
     end
 
     def setup(amount_without_tax, tax_rate)

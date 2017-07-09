@@ -1,4 +1,5 @@
 # Yen
+[![Build Status](https://travis-ci.org/raydive/yen.svg?branch=master)](https://travis-ci.org/raydive/yen)
 
 日本円用のValueObject
 
