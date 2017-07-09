@@ -33,11 +33,11 @@ module Yen
       self.class.new(@amount_without_tax * BigDecimal(times), @tax_rate)
     end
 
-    def /(times)
-      raise "#{amount_without_tax} is not Numeric or String class" unless valid?(times)
-      raise "#{tax_rate} is not Numeric or String class" unless valid?(times)
+    def /(divided)
+      raise "#{amount_without_tax} is not Numeric or String class" unless valid?(divided)
+      raise "#{tax_rate} is not Numeric or String class" unless valid?(divided)
 
-      self.class.new(@amount_without_tax / BigDecimal(times), @tax_rate)
+      self.class.new(@amount_without_tax / BigDecimal(divided), @tax_rate)
     end
 
     def <=>(other)
